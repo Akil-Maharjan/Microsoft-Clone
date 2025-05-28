@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
@@ -32,9 +34,9 @@
     <div class="display">
     <div class="display-section">
         <div class="display-info">
-            <h1>Surface Deals</h1>
+            <h1 class="h1Class">Surface Deals</h1>
             <p>Save up to $500 on select Surface devices</p>
-            <button class="btn">Shop now <i class="fa-solid fa-chevron-right"></i></button>
+            <button onclick="someFunction()" class="btn">Shop now <i class="fa-solid fa-chevron-right"></i></button>
         </div>
     </div>
     </div>
@@ -252,6 +254,52 @@
     </div>
 </footer>
     
+<script>
+        // Initialize ScrollReveal
+        const sr = ScrollReveal({
+            origin: 'top',    // 'top', 'bottom', 'left', 'right'
+            distance: '50px', // Distance the element moves
+            duration: 1000,   // Animation duration in ms
+            delay: 200,       // Delay before animation starts
+            easing: 'ease-out', // Animation easing
+            reset: false,     // Animations repeat on scroll up
+            // mobile: false, // Disables animations on mobile, if desired
+            // viewFactor: 0.2 // Percentage of element in view before reveal
+        });
+
+        // --- Header ---
+        sr.reveal('header .left', { origin: 'left' });
+        sr.reveal('header .right', { origin: 'right' });
+
+        // --- Display Section ---
+        sr.reveal('.display-section .display-info h1', { delay: 300 });
+        sr.reveal('.display-section .display-info p', { delay: 400 });
+        sr.reveal('.display-section .display-info .btn', { delay: 500, origin: 'bottom' });
+
+        // --- Products Section (staggered animation for each product) ---
+        sr.reveal('.products .product', { interval: 400, origin: 'left', distance: '30px' });
+
+        // --- Game Pass Section ---
+        sr.reveal('.game-pass img', { origin: 'left', distance: '80px' });
+        sr.reveal('.game-pass .game-pass-info h2', { delay: 300, origin: 'right' });
+        sr.reveal('.game-pass .game-pass-info p', { delay: 400, origin: 'right' });
+        sr.reveal('.game-pass .game-pass-info .btn', { delay: 500, origin: 'bottom' });
+
+        // --- Social Links Section ---
+        sr.reveal('.social-links h1', { origin: 'top' });
+        sr.reveal('.social-links .social-link i', { origin: 'bottom', interval: 150, delay: 300 });
+
+        // --- Footer ---
+        // Staggered animation for each column in the footer grid
+        sr.reveal('footer .footer-grid > div', { interval: 150, origin: 'bottom', distance: '30px' });
+        sr.reveal('footer .footer-bottom .footer-lang', { delay: 300, origin: 'left' });
+        sr.reveal('footer .footer-bottom .footer-links', { delay: 400, origin: 'right' });
+
+        
+        // sr.reveal('footer .footer-bottom .footer-copy', { delay: 500, origin: 'bottom' }); // Already part of .footer-links
+    </script>
+    <script src="script.js"></script>
 </body>
+
 
 </html>
