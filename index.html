@@ -41,6 +41,7 @@
     </div>
     </div>
     <section class="products">
+        <h1 class="section-title">For Productivity</h1>
         <div class="product">
             <img src="../assets/images/card1.png" alt="Surface pro">
             <div class="info">
@@ -85,7 +86,20 @@
                 </div>
             </div>
         </div>
-        <div class="product">
+       
+
+    </section>
+    <section class="game-pass">
+        <img src="../assets/images/xbox.png" alt="Game Pass">
+        <div class="game-pass-info">
+            <h2>Xbox Game Pass Ultimate</h2>
+            <p>Play over 100 high-quality games with friends on console, PC, and cloud.</p>
+            <button class="btn">Join now <i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+    </section>
+    <section class="products">
+        <h1 class="section-title">For Business</h1>
+         <div class="product">
             <img src="../assets/images/card5.png" alt="Surface pro">
             <div class="info">
                 <h2>New Surface Pro 7</h2>
@@ -129,15 +143,21 @@
                 </div>
             </div>
         </div>
-
     </section>
-    <section class="game-pass">
-        <img src="../assets/images/xbox.png" alt="Game Pass">
-        <div class="game-pass-info">
-            <h2>Xbox Game Pass Ultimate</h2>
-            <p>Play over 100 high-quality games with friends on console, PC, and cloud.</p>
-            <button class="btn">Join now <i class="fa-solid fa-chevron-right"></i></button>
-    </section>
+    <section class="copilot-section">
+        <div class="image-container">
+  <img 
+    src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Copilot-Native-App-ROW:VP5-1596x600" 
+    alt="Microsoft Copilot Native App"
+    class="copilot-image"
+  >
+  </div>
+  <div class="copilot-info">
+            <h2>Copilot is your AI companion</h2>
+            <p>Always by your side, ready to support you whenr nad whrever you need it.</p>
+            <button class="btn">Download the Copilot app</button>
+            </div>
+</section>
     <section class="social-links">
         <h1>Follow us</h1>
         <div class="social-link">
@@ -170,10 +190,7 @@
                 <li>Download Center</li>
                 <li>Microsoft Store support</li>
                 <li>Returns</li>
-                <li>Order tracking</li>
-                <li>Certified Refurbished</li>
-                <li>Microsoft Store Promise</li>
-                <li>Flexible Payments</li>
+                
             </ul>
         </div>
         <div>
@@ -237,15 +254,15 @@
         </div>
         <div class="footer-links">
             
-             <li>Sitemap</li>
-              <li>Contact Microsoft </li> 
-              <li>Privacy</li>
-              <li>Terms of use</li>
-              <li>Trademarks</li>
-                <li>Safety & eco</li>
-                <li>Recycling</li>
-                <li>About our ads</li>
-
+             <li><a href="#"> Sitemap</a></li>
+             <li><a href="#"> Contact Microsoft</a></li>
+             <li><a href="#"> Privacy</a></li>
+             <li><a href="#"> Terms of use</a></li>
+             <li><a href="#"> Trademarks</a></li>
+             <li><a href="#"> Safety & eco</a></li>
+             <li><a href="#"> Recyling</a></li>
+             <li><a href="#"> About our ads</a></li>
+            
               
         </div>
         <div class="footer-copy">
@@ -272,18 +289,22 @@
         sr.reveal('header .right', { origin: 'right' });
 
         // --- Display Section ---
+        sr.reveal('.display-section', { delay: 300, origin: 'top' });
         sr.reveal('.display-section .display-info h1', { delay: 300 });
         sr.reveal('.display-section .display-info p', { delay: 400 });
         sr.reveal('.display-section .display-info .btn', { delay: 500, origin: 'bottom' });
 
         // --- Products Section (staggered animation for each product) ---
         sr.reveal('.products .product', { interval: 400, origin: 'left', distance: '30px' });
+        sr.reveal('.section-title', {  origin: 'right', distance: '300px' });
 
         // --- Game Pass Section ---
-        sr.reveal('.game-pass img', { origin: 'left', distance: '80px' });
+        sr.reveal('.game-pass img', { origin: 'right', distance: '80px' });
         sr.reveal('.game-pass .game-pass-info h2', { delay: 300, origin: 'right' });
         sr.reveal('.game-pass .game-pass-info p', { delay: 400, origin: 'right' });
         sr.reveal('.game-pass .game-pass-info .btn', { delay: 500, origin: 'bottom' });
+        // --- Copilot Section ---
+        sr.reveal('.copilot-section .copilot-image', { origin: 'left' });
 
         // --- Social Links Section ---
         sr.reveal('.social-links h1', { origin: 'top' });
